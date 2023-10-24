@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <% if current_user.present? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class:"dropdown-item") %>
+      <% else %>
+       <%= link_to('Sign Up/Login', new_session_path(:user), class:"btn btn-sm btn-light float-right" ) %>
+      <% end %>
+    </div>
+    <hr>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
