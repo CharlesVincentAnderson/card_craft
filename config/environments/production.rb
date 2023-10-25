@@ -68,11 +68,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.sendgrid.net',
+    address:              'email-smtp.us-east-2.amazonaws.com',
     port:                 '587',
     authentication:       :plain,
-    user_name:            ENV['SENDGRID_USERNAME'],
-    password:             ENV['SENDGRID_PASSWORD'],
+    user_name:            ENV['AWS_USERNAME'],
+    password:             ENV['AWS_PASSWORD'],
     domain:               'card-craft-bnyo9.ondigitalocean.app',
     enable_starttls_auto: true
   }
